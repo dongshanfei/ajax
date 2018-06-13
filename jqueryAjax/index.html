@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style>
+       
+    </style>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <div id="show">
+        
+    </div>
+
+</body>
+</html>
+ <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                console.log(1)
+                htmlobj=$.ajax({url:"demo.txt",async:false})
+                console.log(2)
+                $("#show").html(htmlobj.responseText)
+            })
+        })
+    </script>

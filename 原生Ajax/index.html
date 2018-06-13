@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原生的Ajax</title>
+    
+    <style>
+       
+    </style>
+</head>
+<body>
+    <button onclick="btn()">点击</button>
+    <div id="show">
+        
+    </div>
+
+</body>
+</html>
+<script>
+function btn(){
+    var xmlhttp;
+    if(window.XMLHttpRequest){
+       xmlhttp=new XMLHttpRequest();
+    }
+    else{
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    
+    xmlhttp.onreadystatechange=function(){
+
+        if(xmlhttp.readyState==4 && xmlhttp.status==200){
+            console.log(xmlhttp.readyState==4 && xmlhttp.status==200)
+            document.getElementById("show").innerHTML=xmlhttp.responseText;
+            
+        }  
+        else{
+            console.log("链接失败")
+        }
+    }
+    xmlhttp.open("POST","demo.txt",true);
+    xmlhttp.send();
+
+
+}
+
+
+   
+</script>
